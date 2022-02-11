@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Ubuntu:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Muli:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--color-scrollBg);
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  background: var(--color-scrollBg);
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-cian);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-primary: "Ubuntu", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+  --font-tertiary: "Josefin Slab", sans-serif;
+  --font-quaternary: "Baloo Da 2", sans-serif;
+  --font-action: "Muli", sans-serif;
+
+  --color-white: #FFF;
+  --color-scrollThumb: #DAD7D7
+  --color-scrollBg: #F4F4F4;
+  --color-black: #000;
+  --color-blackBg: rgba(0, 0, 0, 0.6);
+  --color-brown: #8D6E63;
+  --color-purle: #A933CB;
+  --color-gold: #FFB703;
+  --color-yellow: #F2C130;
+  --color-babyBlue: #02ABC0;
+  --color-cian: #045B82;
+}
+
+/* navbar - Topo da Página -- Início */
+header {
+  width: 100%;
+	height: 110px;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: var(--color-yellow);
+  padding: 11px 0;
+  font-family: var(--font-primary);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.navbar .sticky {
+  padding: 10px 0;
+  background: var(--color-cian);
+}
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;  
+  margin: auto;
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .max-width .brand {
+  display: inline-block;
+  vertical-align: top;
+  width: 90px;
+  height: 90px;
+  margin-left: 0;
+  margin-right: 20px;
+  margin-top: 10px; 
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  color: var(--color-brown);
+  font-size: 18px;
+  font-weight: 500; 
+  margin-left: 25px;
+}
+
+.navbar .menu li a:hover {
+  color: var(--color-white);
+}
+
+
+/* Home -- Início */
+.home {
+  display: flexbox;
+}
+
+.home .image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--color-blackBg);
+}
+
+.home .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  animation: zoom 25s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes zoom {
+  0% {
+      transform: scale(1.3);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.home-content {
+  position: fixed;
+  top: 70%;
+  left: 60%;
+}
+
+.home-content h1 {
+  color: var(--color-white);  
+  font-family: var(--font-secondary);
+  font-weight: 200;
+  font-family: cursive;
+  font-size: 2.3rem;
+  line-height: 3.5rem;
+  margin-bottom: 0.8rem;
+  animation: moveBanner 2s 0.5s forwards;
+  visibility: hidden;
+  transition: visibility 0s, 0.5s linear;
+}
+
+.home-content p {
+  color: var(--color-white);  
+  font-family: var(--font-tertiary);
+  font-weight: 200;
+  font-size: 1.3rem;
+  animation: moveBanner 2s 0.8s forwards;
+  visibility: hidden;
+  transition: visibility 0s, 0.5s linear;
+}
+
+@keyframes moveBanner {
+  0% {
+      transform: translateY(10rem) rotateY(-30deg);
+      visibility: visible;
+  }
+  100% {
+      transform: translateY(0) rotateY(0);
+      visibility: visible;
+      opacity: 1;
+  }
+}
+
+/*Menu Hamburger -- Menu Mobile */
+.menu-btn {
+  color: var(--color-brown);
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsividade */
+@media (max-width: 1200px){
+  .home-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  }
+
+  .home-content h1 {
+    color: var(--color-white);  
+    font-family: var(--font-secondary);
+    font-weight: 200;
+    font-family: cursive;
+    font-size: 2.3rem;
+    line-height: 3.5rem;
+    margin-bottom: 0.8rem;
+    animation: moveBanner 2s 0.5s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+  
+  .home-content p {
+    color: var(--color-white);  
+    font-family: var(--font-tertiary);
+    font-weight: 200;
+    font-size: 1.3rem;
+    animation: moveBanner 2s 0.8s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+}
+
+@media (max-width: 947px) {
+  .max-width {
+    padding: 0 50px; 
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+
+  .navbar .menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: var(--color-yellow);
+    padding-top: 80px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .navbar .menu active {
+    left: 0;
+  }
+
+  .navbar .menu li {
+    display: block;
+  }
+
+  .navbar .menu li a {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 697px){
+  .home-content {
+    position: fixed;
+    top: 20%;
+    left: 60%;
+  }
+
+  .home-content h1 {
+    color: var(--color-white);  
+    font-family: var(--font-secondary);
+    font-weight: 200;
+    font-family: cursive;
+    font-size: 2.3rem;
+    line-height: 3.5rem;
+    margin-bottom: 0.8rem;
+    animation: moveBanner 2s 0.5s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+  
+  .home-content p {
+    color: var(--color-white);  
+    font-family: var(--font-tertiary);
+    font-weight: 200;
+    font-size: 1.3rem;
+    animation: moveBanner 2s 0.8s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+}

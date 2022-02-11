@@ -56,9 +56,15 @@ header {
   position: fixed;
   width: 100%;
   background: var(--color-yellow);
-  padding: 12px 0 12px 0;
+  padding: 11px 0;
   font-family: var(--font-primary);
   z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.navbar .sticky {
+  padding: 10px 0;
+  background: var(--color-cian);
 }
 
 .max-width {
@@ -93,15 +99,12 @@ header {
   font-size: 18px;
   font-weight: 500; 
   margin-left: 25px;
-  
 }
 
-/*Menu Hamurger -- Menu Mobile */
-.menu-btn {
-  color: var(--color-brown);
-  font-size: 2rem;
-  cursor: pointer;
+.navbar .menu li a:hover {
+  color: var(--color-white);
 }
+
 
 /* Home -- Início */
 .home {
@@ -175,4 +178,110 @@ header {
   }
 }
 
+/*Menu Hamburger -- Menu Mobile */
+.menu-btn {
+  color: var(--color-brown);
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
 
+/* Responsividade */
+@media (max-width: 1200px){
+  .home-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  }
+
+  .home-content h1 {
+    color: var(--color-white);  
+    font-family: var(--font-secondary);
+    font-weight: 200;
+    font-family: cursive;
+    font-size: 2.3rem;
+    line-height: 3.5rem;
+    margin-bottom: 0.8rem;
+    animation: moveBanner 2s 0.5s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+  
+  .home-content p {
+    color: var(--color-white);  
+    font-family: var(--font-tertiary);
+    font-weight: 200;
+    font-size: 1.3rem;
+    animation: moveBanner 2s 0.8s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+}
+
+@media (max-width: 947px) {
+  .max-width {
+    padding: 0 50px; 
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+
+  .navbar .menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: var(--color-yellow);
+    padding-top: 80px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .navbar .menu active {
+    left: 0;
+  }
+
+  .navbar .menu li {
+    display: block;
+  }
+
+  .navbar .menu li a {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 697px){
+  .home-content {
+    position: fixed;
+    top: 20%;
+    left: 60%;
+  }
+
+  .home-content h1 {
+    color: var(--color-white);  
+    font-family: var(--font-secondary);
+    font-weight: 200;
+    font-family: cursive;
+    font-size: 2.3rem;
+    line-height: 3.5rem;
+    margin-bottom: 0.8rem;
+    animation: moveBanner 2s 0.5s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+  
+  .home-content p {
+    color: var(--color-white);  
+    font-family: var(--font-tertiary);
+    font-weight: 200;
+    font-size: 1.3rem;
+    animation: moveBanner 2s 0.8s forwards;
+    visibility: hidden;
+    transition: visibility 0s, 0.5s linear;
+  }
+}
